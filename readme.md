@@ -32,22 +32,22 @@ Before diving into analysis, we inspect the structure of the dataset:
 import pandas as pd
 data = pd.read_csv('path_to_your_dataset.csv')
 data.head()
-2. Summary Statistics
+###2. **Summary Statistics
 Generate summary statistics for both numerical and categorical variables:
 
-Numerical variables: Descriptive stats such as mean, median, standard deviation, and outliers.
-Categorical variables: Frequencies of various categories like aircraft makes and accident causes.
+##Numerical variables: Descriptive stats such as mean, median, standard deviation, and outliers.
+##Categorical variables: Frequencies of various categories like aircraft makes and accident causes.
 python
 Copy code
 data.describe()
-3. Missing Values Analysis
+###3. **Missing Values Analysis
 Detect and visualize missing values in the dataset using a heatmap to ensure no key data is lost during analysis.
 
 python
 Copy code
 import seaborn as sns
 sns.heatmap(data.isnull(), cbar=False, cmap='viridis')
-4. Data Distribution and Trends
+###4. **Data Distribution and Trends
 We visualize the distribution of key variables, such as accident year, to understand overall trends:
 
 Accident frequency over time: Spot trends in accident occurrences.
@@ -57,7 +57,7 @@ Copy code
 sns.histplot(data['Accident Year'], bins=30, kde=True)
 plt.title('Accidents by Year')
 plt.show()
-5. Correlation Analysis
+###5. **Correlation Analysis
 We explore relationships between numerical features using correlation matrices. For example, we might find out how accident severity relates to aircraft age or flight conditions.
 
 python
@@ -66,7 +66,7 @@ sns.heatmap(data.corr(), annot=True, cmap='coolwarm')
 6. Geographical Data (if available)
 For spatial analysis, we explore the geographic locations of aviation accidents using geopandas or other mapping tools.
 
-📈 Key Visualizations
+##📈 Key Visualizations
 Some key visualizations included in the analysis:
 
 Accident Trend Over Time: A line plot to visualize the number of accidents each year.
@@ -74,7 +74,7 @@ Aircraft Make Distribution: A bar plot showing the frequency of different aircra
 Correlation Heatmap: A heatmap visualizing the relationships between numerical variables such as aircraft age, flight hours, and accident severity.
 These visualizations are included in the notebooks/ directory, and can be dynamically generated within the Jupyter notebooks.
 
-🛠️ Tools & Libraries Used
+##🛠️ Tools & Libraries Used
 This project leverages the following Python libraries:
 
 Pandas: For data manipulation and analysis.
