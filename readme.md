@@ -1,103 +1,41 @@
-Aviation Accident Data Analysis (1962 - 2023) 📊
+# **Aviation Safety Risk Assessment**
 
-Welcome to the **Aviation Accident Data Analysis** repository. This project is focused on conducting an exploratory data analysis (EDA) of aviation accidents between 1962 and 2023, with the goal of extracting insights to help identify the lowest-risk aircraft for potential purchase and operation by the company's new aviation division.
+## **Overview**
+This project analyzes historical aviation accident data to assess risks associated with different aircraft types, manufacturers, and locations. The goal is to provide data-driven insights to support the company’s decision to enter the aviation industry while minimizing operational risks.
 
-## 🌟 Project Overview
+## **Business Understanding**
+### **Stakeholder**
+The primary stakeholder is the company's aviation division, responsible for acquiring aircraft and determining operational strategies.
 
-This repository contains:
+### **Key Business Questions**
+1. Which aircraft categories have the lowest accident rates?
+2. What manufacturers produce the safest aircraft?
+3. Which locations pose the highest risk for aviation accidents?
+4. What trends can be identified over time regarding aviation safety?
 
-- 📊 **Exploratory Data Analysis (EDA)**: Understanding the patterns, trends, and important characteristics of aviation accidents over time.
-- 📈 **Data Visualizations**: A variety of plots that provide insights into accident trends, aircraft types, and risk factors.
-- 🛠️ **Tools and Libraries**: Jupyter notebooks that perform data cleaning, EDA, and visualization using popular Python libraries like Pandas, Matplotlib, and Seaborn.
+## **Data Understanding and Analysis**
+### **Source of Data**
+The dataset used in this project comes from the National Transportation Safety Board (NTSB), covering aviation accidents from 1962 to 2023.
 
-## 📑 Contents
+### **Description of Data**
+- **Aircraft Information:** Aircraft category, make (manufacturer), and engine type.
+- **Accident Information:** Date, location, phase of flight, severity of injuries.
+- **Injury Metrics:** Number of fatal, serious, minor injuries, and uninjured passengers.
 
-- **`notebooks/`**: Jupyter notebooks performing the EDA step-by-step.
-- **`data/`**: Raw and cleaned aviation accident data files.
-- **`plots/`**: Pre-generated plots for quick access.
-- **`README.md`**: This file!
+### **Data Analysis and Visualizations**
+#### **1. Distribution of Injury Categories**
+This visualization highlights the frequency of fatal, serious, and minor injuries in aviation accidents.
 
-## 🔍 Exploratory Data Analysis (EDA)
+#### **2. Risk Ranking of Aircraft Makes**
+This bar chart ranks different aircraft manufacturers by their accident risk scores, indicating the safest and riskiest makes.
 
-The goal of EDA is to provide a deep understanding of the dataset and reveal hidden patterns, correlations, and potential risk factors. Below is a breakdown of the analysis steps:
+#### **3. Top 10 High-Risk Locations for Accidents**
+A bar chart showcasing the locations with the highest accident risk, helping stakeholders avoid high-risk operational zones.
 
-### 1. **Data Overview and Cleaning**
+## **Conclusion**
+### **Summary of Findings**
+1. **Certain aircraft categories and manufacturers have significantly lower accident rates**, making them safer options for purchase.
+2. **High-risk locations exhibit greater accident frequencies**, often due to environmental factors or operational challenges.
+3. **Takeoff and landing are the most dangerous phases of flight**, necessitating enhanced training and safety protocols.
 
-Before diving into analysis, we inspect the structure of the dataset:
-- Display the first few rows and columns.
-- Check for missing or inconsistent data.
-- Summarize data types and ensure they are in the correct format.
-
-```python
-import pandas as pd
-data = pd.read_csv('path_to_your_dataset.csv')
-data.head()
-2. Summary Statistics
-Generate summary statistics for both numerical and categorical variables:
-
-Numerical variables: Descriptive stats such as mean, median, standard deviation, and outliers.
-Categorical variables: Frequencies of various categories like aircraft makes and accident causes.
-python
-Copy code
-data.describe()
-3. Missing Values Analysis
-Detect and visualize missing values in the dataset using a heatmap to ensure no key data is lost during analysis.
-
-python
-Copy code
-import seaborn as sns
-sns.heatmap(data.isnull(), cbar=False, cmap='viridis')
-4. Data Distribution and Trends
-We visualize the distribution of key variables, such as accident year, to understand overall trends:
-
-Accident frequency over time: Spot trends in accident occurrences.
-Aircraft makes: Discover which types of aircraft are most often involved in incidents.
-python
-Copy code
-sns.histplot(data['Accident Year'], bins=30, kde=True)
-plt.title('Accidents by Year')
-plt.show()
-5. Correlation Analysis
-We explore relationships between numerical features using correlation matrices. For example, we might find out how accident severity relates to aircraft age or flight conditions.
-
-python
-Copy code
-sns.heatmap(data.corr(), annot=True, cmap='coolwarm')
-6. Geographical Data (if available)
-For spatial analysis, we explore the geographic locations of aviation accidents using geopandas or other mapping tools.
-
-📈 Key Visualizations
-Some key visualizations included in the analysis:
-
-Accident Trend Over Time: A line plot to visualize the number of accidents each year.
-Aircraft Make Distribution: A bar plot showing the frequency of different aircraft models involved in accidents.
-Correlation Heatmap: A heatmap visualizing the relationships between numerical variables such as aircraft age, flight hours, and accident severity.
-These visualizations are included in the notebooks/ directory, and can be dynamically generated within the Jupyter notebooks.
-
-🛠️ Tools & Libraries Used
-This project leverages the following Python libraries:
-
-Pandas: For data manipulation and analysis.
-Matplotlib: For creating static, animated, and interactive visualizations.
-Seaborn: For statistical data visualization based on Matplotlib.
-Geopandas (optional): For geographic data analysis.
-Make sure to install the dependencies by running:
-
-bash
-Copy code
-pip install -r requirements.txt
-📝 How to Run the Project
-Clone the Repository:
-bash
-Copy code
-git clone https://github.com/yourusername/aviation-accident-data-analysis.git
-Install Dependencies:
-bash
-Copy code
-pip install -r requirements.txt
-Run the Jupyter Notebooks:
-Navigate to the notebooks/ directory and open the Jupyter notebooks for interactive EDA:
-
-bash
-Copy code
-jupyter notebook
+By leveraging these insights, the company can make informed decisions when selecting aircraft and determining operational locations, ultimately enhancing aviation safety and business viability.
